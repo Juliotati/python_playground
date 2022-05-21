@@ -40,7 +40,6 @@ class News(BaseModel):
 
 
 def get_news(url: str = None):
-    response = HttpHelper.get_request(url)
-    warframe_data = HttpHelper.decode_content(response)
-    _decoded_data = warframe_data[2]
-    return _decoded_data
+    http_response = HttpHelper.get_request(url)
+    decoded_data = HttpHelper.decode_content(http_response)
+    return decoded_data[2]

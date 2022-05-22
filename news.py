@@ -5,13 +5,13 @@ from http_helper import HttpHelper
 
 
 class News(BaseModel):
-    id: int = 0
+    id: str = '00x00'
     message: str = 'no message'
     link: str = ''
     date: str = ''
     image_link: str = ''
 
-    def __init__(self, news_id: int, message: str, link: str, date: str, image_link: str, **data: Any):
+    def __init__(self, news_id: str, message: str, link: str, date: str, image_link: str, **data: Any):
         super().__init__(**data)
         self.id = news_id
         self.message = message
@@ -39,7 +39,7 @@ class News(BaseModel):
         )
 
 
-def get_news(url: str = None):
+def warframe_news(url: str = None):
     http_response = HttpHelper.get_request(url)
     decoded_data = HttpHelper.decode_content(http_response)
-    return decoded_data[2]
+    return decoded_data

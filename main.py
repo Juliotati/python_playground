@@ -29,15 +29,13 @@ def read_news(news_id: str):
 
 @app.put("/news/{news_id}")
 def update_news(news_id: str, news: News):
-    return {"id": news_id, "news_message": news.message, "link": news.link, "date": news.date,
+    return {"news_id": news_id, "news_message": news.message, "link": news.link, "date": news.date,
             "image_link": news.image_link}
 
 
-@app.post("/news/{news_id}")
+@app.post("/news")
 def add_news(news: News):
-    test_id = '2346763489092490x909'
-    return {"id": test_id, "news_message": news.message, "link": news.link, "date": news.date,
-            "image_link": news.image_link}
+    return news
 
 
 @app.delete("/news/{news_id}")

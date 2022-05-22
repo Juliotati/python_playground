@@ -7,7 +7,7 @@ from http_helper import HttpHelper
 
 
 class News(BaseModel):
-    id: str = ''
+    news_id: str = ''
     message: str = ''
     link: str = ''
     date: str = f'{datetime.date.today()}'
@@ -15,7 +15,7 @@ class News(BaseModel):
 
     def __init__(self, news_id: str, message: str, link: str, date: str, image_link: str, **data: Any):
         super().__init__(**data)
-        self.id = news_id
+        self.news_id = news_id
         self.message = message
         self.link = link
         self.date = date
@@ -23,7 +23,7 @@ class News(BaseModel):
 
     def to_string(self):
         return f'''
-        id: {self.id}
+        id: {self.news_id}
         message: {self.message}
         link: {self.link}
         date: {self.date}

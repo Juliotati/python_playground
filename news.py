@@ -1,3 +1,5 @@
+import datetime
+
 from pydantic import BaseModel
 from pydantic.annotated_types import Any
 
@@ -5,10 +7,10 @@ from http_helper import HttpHelper
 
 
 class News(BaseModel):
-    id: str = '00x00'
-    message: str = 'no message'
+    id: str = ''
+    message: str = ''
     link: str = ''
-    date: str = ''
+    date: str = f'{datetime.date.today()}'
     image_link: str = ''
 
     def __init__(self, news_id: str, message: str, link: str, date: str, image_link: str, **data: Any):

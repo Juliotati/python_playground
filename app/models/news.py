@@ -3,8 +3,6 @@ import datetime
 from pydantic import BaseModel
 from pydantic.annotated_types import Any
 
-from http_helper import HttpHelper
-
 
 class News(BaseModel):
     news_id: str = ''
@@ -39,9 +37,3 @@ class News(BaseModel):
             data['date'],
             data['imageLink'],
         )
-
-
-def warframe_news(url: str = None):
-    http_response = HttpHelper.get_request(url)
-    decoded_data = HttpHelper.decode_content(http_response)
-    return decoded_data

@@ -1,8 +1,8 @@
 from app.models.news import News
-from utils.error_response import ErrorResponse
+from app.utils.error_response import ErrorResponse
 from fastapi import APIRouter
 
-from utils.http_helper import HttpHelper
+from app.utils.http_helper import HttpHelper
 
 router = APIRouter(
     prefix="/news",

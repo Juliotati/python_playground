@@ -1,6 +1,6 @@
 from fastapi import FastAPI
+from psycopg2 import Error
 
-from app.models.user import UserProfile
 from app.routers.news import news
 from app.routers.user import user
 
@@ -16,11 +16,27 @@ def read_root():
 
 
 if __name__ == '__main__':
-    rs = news.read_news('62696304e8729e682710a8a7')
-    print(rs)
+    import psycopg2
 
-    usr = UserProfile(user_id=1, name='julio', email='julio@tati.com')
-    print(usr.to_string())
+    try:
+        connection = psycopg2.connect(
+            user="juliotati",
+            password="123456",
+            host="127.0.0.1",
+            port="5432",
+            database="playground")
 
-    usr.copy_with(name='yuri')
-    print(usr.to_string())
+        cursor = connection.cursor()
+        cursor.execute("SELECT version();")
+        record = cursor.fetchone()
+        cursor.execute(
+            '''
+            CREATE table expenses (
+            id INT NOT null PRIMARY KEY,
+            name TEXT
+        )''')
+        connection.commit()
+
+        print(record)
+    except (Exception, Error) as error:
+        print("Error while connecting to PostgreSQL", error)

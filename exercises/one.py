@@ -1,10 +1,10 @@
 # 1.
 # Given is a list between numbers from 0 to 100, and it should be
 # output every number in the terminal, which is divisible by 2.
-#
-numbers_list1 = range(0, 100)
 
-for number in numbers_list1:
+numbers_list = range(0, 100)
+
+for number in numbers_list:
     if number % 2 == 0:
         print(number)
 
@@ -14,10 +14,9 @@ for number in numbers_list1:
 # in a new list variable. Please return the total number of entries
 # in that list and the list itself.
 
-numbers_list2 = range(0, 100)
 numbers_containing_five = []
 
-for number in numbers_list2:
+for number in numbers_list:
     if number.__str__().__contains__('5'):
         numbers_containing_five.append(number)
 print(numbers_containing_five)

@@ -20,3 +20,4 @@ for number in numbers_list:
     if number.__str__().__contains__('5'):
         numbers_containing_five.append(number)
 print(numbers_containing_five)
+print(f'total numbers containing 5: {len(numbers_containing_five)}')

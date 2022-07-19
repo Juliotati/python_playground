@@ -10,11 +10,11 @@
 
 numbers_list = range(0, 100)
 numbers_containing_five = []
-
+criteria = '5'
 for number in numbers_list:
     if number % 2 == 0:
         print(number)
-    if number.__str__().__contains__('5'):
+    if str(number).__contains__(criteria):
         numbers_containing_five.append(number)
 print(numbers_containing_five)
-print(f'total numbers containing 5: {len(numbers_containing_five)}')
+print(f'Total numbers containing {criteria}: {len(numbers_containing_five)}')

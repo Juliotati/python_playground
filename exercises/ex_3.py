@@ -9,11 +9,12 @@
 
 
 def file_path() -> str:
+    # TODO: replace with your own path
     default_file_path = '/Users/juliotati/Library/Application Support/JetBrains/PyCharmCE2022.1/scratches'
     return default_file_path
 
 
-def start_task2():
+def start_task3():
     print('🎬 starting task')
     file_items = get_strings_file()
     new_items = []
@@ -44,4 +45,4 @@ def save_new_items(items: [str]):
 
 
 if __name__ == '__main__':
-    start_task2()
+    start_task3()

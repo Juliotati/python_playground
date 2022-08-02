@@ -13,21 +13,17 @@
 # get a new list without the 7's.
 
 
-def list_99():
-    new_list_from_range = []
-    for number in range(100):
-        new_list_from_range.append(number)
-    return new_list_from_range
+list_99 = list(range(100))
 
 
 def start_task5():
     new_list_99 = []
-    for number in list_99():
+    for number in list_99:
         new_list_99.append(number * 2)
 
     print(f'new_list_99: {new_list_99}')
     print(f'last_element: {new_list_99[-1]}')
-    remove_numbers_containing_7(list_99())
+    remove_numbers_containing_7(list_99)
 
 
 def remove_numbers_containing_7(numbers: [int]):

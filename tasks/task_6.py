@@ -3,8 +3,8 @@
 # and "n".
 #
 # - Use a list comprehension which loops through the previous
-# list from task 3 (community_members) and call (use) that
-# function in the list comprehension.
+# list from task 3 (community_members) and call that function
+# in the list comprehension.
 #
 # If the requirements are met, extend the function "en_filter"
 # by implementing the code to append the string variable to the
@@ -14,8 +14,8 @@
 
 def start_task6():
     community_members = ["starving", "pinsaregood", "arth", "blazertherazer", "snow", "tess", "morne", "darthtilda"]
-    numbers = [member for member in community_members if should_append_member(member)]
-    print(numbers)
+    en_filter = [member for member in community_members if should_append_member(member)]
+    print(en_filter)
 
 
 def should_append_member(member_name: str) -> bool:

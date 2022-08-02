@@ -16,5 +16,7 @@ for number in numbers_list:
         print(number)
     if str(number).__contains__(criteria):
         numbers_containing_five.append(number)
+
 print(numbers_containing_five)
 print(f'Total numbers containing {criteria}: {len(numbers_containing_five)}')
+print('✨ 🏁 ️Completed tasks')

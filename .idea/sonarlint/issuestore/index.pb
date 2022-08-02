@@ -13,3 +13,7 @@ B
 app/models/news.py,9/2/92134c721a611ee4d6c26a6f3448e0b0ba804cb4
 H
 app/routers/news/news.py,a/f/afb5ec60aab69bc216db6d33a3f570e324ff92aa
+;
+app/main.py,6/0/60a964aea4a6760d2f0fe80a7725ed9d569edd6c
+A
+exercises/ex_1.py,e/e/ee8daab126a43fea9589e6ca2ca0ca3b982ae187

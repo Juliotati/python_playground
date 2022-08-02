@@ -7,10 +7,13 @@
 #
 # At the end, save new list into a new file called "Task3.txt"
 
-default_file_path = '/Users/juliotati/Library/Application Support/JetBrains/PyCharmCE2022.1/scratches'
+
+def file_path() -> str:
+    default_file_path = '/Users/juliotati/Library/Application Support/JetBrains/PyCharmCE2022.1/scratches'
+    return default_file_path
 
 
-def do_stuff():
+def start_task2():
     print('🎬 starting task')
     file_items = get_strings_file()
     new_items = []
@@ -21,7 +24,7 @@ def do_stuff():
 
 
 def get_strings_file():
-    file = open(f'{default_file_path}/scratch.txt', 'r')
+    file = open(f'{file_path()}/scratch.txt', 'r')
     file_strings = file.read()
     file.close()
     print('📂 🔒 opened and closed file')
@@ -34,11 +37,11 @@ def multiple(input_value: str) -> str:
 
 
 def save_new_items(items: [str]):
-    new_file = open(f'{default_file_path}/Task3.txt', 'w')
+    new_file = open(f'{file_path()}/Task3.txt', 'w')
     new_file.write(str(items))
     new_file.close()
     print('📂 🔒️ saved new items and closed file')
 
 
 if __name__ == '__main__':
-    do_stuff()
+    start_task2()

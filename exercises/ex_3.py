@@ -24,7 +24,7 @@ def start_task3():
     print('✨ 🏁 ️task completed')
 
 
-def get_strings_file():
+def get_strings_file() -> list:
     file = open(f'{file_path()}/scratch.txt', 'r')
     file_strings = file.read()
     file.close()

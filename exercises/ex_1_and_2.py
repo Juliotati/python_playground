@@ -11,10 +11,11 @@
 numbers_list = range(0, 100)
 numbers_containing_five = []
 criteria = '5'
+
 for number in numbers_list:
     if number % 2 == 0:
         print(number)
-    if str(number).__contains__(criteria):
+    if criteria in str(number):
         numbers_containing_five.append(number)
 
 print(numbers_containing_five)

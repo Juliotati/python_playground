@@ -44,5 +44,4 @@ def update_news(news_id: str):
 
 def get_warframe_news(url: str = None):
     http_response = HttpHelper.get_request(url)
-    decoded_data = HttpHelper.decode_content(http_response)
-    return decoded_data
+    return HttpHelper.decode_content(http_response)

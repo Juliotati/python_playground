@@ -95,7 +95,7 @@ class StudentsScreening:
 
     def students_with_status(self, admitted_status: bool):
         students = []
-        for stu in self.all_students:
-            if stu.admission_status is admitted_status:
-                students.append(stu)
+        for student in self.all_students:
+            if student.admission_status is admitted_status:
+                students.append(student)
         return students

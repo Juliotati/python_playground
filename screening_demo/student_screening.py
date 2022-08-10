@@ -10,7 +10,7 @@ class StudentsScreening:
     _max_temperature: int = 42
     _normal_temperature: int = 38
     _campus_capacity: int = 300
-    _total_students = range(500)
+    _total_students = 500
     _last_student_arrival: int = 0
 
     def __init__(self):
@@ -21,7 +21,7 @@ class StudentsScreening:
         self._reset(self)
         print('------------------------------------------------------------------------------------')
         print('Starting screening')
-        for index in self._total_students:
+        for index in range(self._total_students):
             if self._campus_is_full() and self._should_close_campus():
                 student_arrival_time: int = random.randint(0, 12)
                 student_temperature: int = self._get_student_temperature()

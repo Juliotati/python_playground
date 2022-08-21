@@ -19,10 +19,7 @@ def start_task6():
 
 
 def should_append_member(member_name: str) -> bool:
-    no_criteria_e = 'e' not in member_name
-    no_criteria_n = 'n' not in member_name
-
-    return no_criteria_e and no_criteria_n
+    return 'e' not in member_name and 'n' not in member_name
 
 
 if __name__ == '__main__':

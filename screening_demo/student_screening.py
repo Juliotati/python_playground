@@ -23,7 +23,7 @@ class StudentsScreening:
         print('Starting screening')
         for index in range(self._total_students):
             if self._campus_is_full() and self._should_close_campus():
-                student_arrival_time: int = random.randint(6, 12)
+                student_arrival_time: int = random.randint(1, 12)
                 student_temperature: int = self._get_student_temperature()
                 if self._is_after_closing_time(student_arrival_time) and self._has_high_temp(student_temperature):
                     self._all_students.append(
@@ -52,7 +52,7 @@ class StudentsScreening:
 
     def _get_results(self):
         print('\n')
-        print(f'All _students: {len(self._students())}')
+        print(f'All students: {len(self._students())}')
         print(f'Admitted students: {len(self._students(True))}')
 
         print(f'Students not admitted: {len(self._students(False))}')

@@ -23,7 +23,7 @@ class StudentsScreening:
         print('Starting screening')
         for index in range(self._total_students):
             if self._campus_is_full() and self._should_close_campus():
-                student_arrival_time: int = random.randint(0, 12)
+                student_arrival_time: int = random.randint(6, 12)
                 student_temperature: int = self._get_student_temperature()
                 if self._is_after_closing_time(student_arrival_time) and self._has_high_temp(student_temperature):
                     self._all_students.append(
@@ -53,20 +53,20 @@ class StudentsScreening:
     def _get_results(self):
         print('\n')
         print(f'All _students: {len(self._students())}')
-        print(f'Admitted _students: {len(self._students(True))}')
+        print(f'Admitted students: {len(self._students(True))}')
 
-        print(f'Students not _admitted: {len(self._students(False))}')
+        print(f'Students not admitted: {len(self._students(False))}')
         print('------------------------------------------------------------------------------------')
 
     @staticmethod
     def _not_admitted(index: int, student_arrival_time, students_temperature: int):
         print(
             f'Student {index} could not enter at {student_arrival_time}, temp is {students_temperature} and is not '
-            f'_admitted.')
+            f'admitted.')
 
     @staticmethod
     def _admitted(name: int, student_arrival_time: int, students_temperature: int):
-        print(f'Student {name} enter at {student_arrival_time}, temp is {students_temperature} and is _admitted.')
+        print(f'Student {name} enter at {student_arrival_time}, temp is {students_temperature} and is admitted.')
 
     @staticmethod
     def _reset(self):
@@ -90,12 +90,5 @@ class StudentsScreening:
 
     def _students(self, admitted_status: bool = None) -> [Student]:
         if admitted_status is not None:
-            return self._students_with_status(admitted_status)
+            return list(filter(lambda st: st.admission_status == admitted_status, self._all_students))
         return self._all_students
-
-    def _students_with_status(self, admitted_status: bool):
-        students = []
-        for student in self._all_students:
-            if student.admission_status is admitted_status:
-                students.append(student)
-        return students

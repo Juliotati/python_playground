@@ -12,7 +12,7 @@ pydantic==1.10.13
 setuptools==65.5.1
 sniffio==1.2.0
 starlette==0.36.2
-tqdm==4.64.0
+tqdm==4.66.3
 typing_extensions==4.3.0
 fastapi~=0.78.0
 wheel~=0.37.1
